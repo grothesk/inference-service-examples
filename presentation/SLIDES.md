@@ -114,6 +114,12 @@ Models can be provided by
 * URL
 * PVC
 
+## Autoscaling
+
+Autoscaling
+* scales to zero if there is no request (given minReplicas is 0)
+* scales up if more replicas are needed to handle the load
+
 ## Summary
 
 * Kubernetes + KServe support High Availability (multiple nodes, replication, self-healing)
@@ -123,7 +129,7 @@ Models can be provided by
 
 ## Outlook
 
-* Perform Autosaling on GPUs
+* Perform Autoscaling on GPUs
 * Increase reliability by making use of GitOps
 * Integration of FHIR resources in the Kubernetes-API
 * ...
