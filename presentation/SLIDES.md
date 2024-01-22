@@ -3,6 +3,7 @@
 ## Title
 
 Inference Services on Kubernetes
+Malte Groth
 
 ## About me
 
@@ -19,7 +20,9 @@ Inference Services on Kubernetes
 ## About Deepshore
 
 * OMI: associated partner / technical rollout partner 
-* KCSP, CNCF, IPAI
+* Kubernetes Certified Service Provider (KCSP)
+* Member of Cloud Native Computing Foundation
+* Member of Innovation Park Artificial Intelligence
 * main subjects:
     * Cloud Technology
     * Distributed Systems
@@ -27,18 +30,18 @@ Inference Services on Kubernetes
 * AI related work:
     * AI optimized operations 
     * anomaly detection based on IoT data
-    * DeepLaw
+    * digital assistance for document management
 
 ## Goal of presentation
 
 How to serve AI models in consideration of
 * High Availability 
-* Reliability
-* BUT: Efficiency and Usability
+* Reliability 
+* BUT ALSO: Efficiency and Usability
 
 ## What is Kubernetes? 
 
-"Kubernetes is a ...
+"Kubernetes (k8s) is a ...
 * open-source
 * container orchestration system
 * for automating
@@ -49,33 +52,44 @@ How to serve AI models in consideration of
 ## Why Kubernetes?
 
 * High Availability:
-    * multiple nodes
-    * pod replication
-    * Self-Healing via automation
+    * clusters consists of multiple nodes
+    * k8s controllers enable service replication
+    * k8s controllers provide self-healing mechanisms 
 * Resource Efficiency:
-    * Powerful Scheduling
-
+    * k8s comes with a powerful scheduling 
+ 
+Image: https://kubernetes.io/docs/concepts/architecture/ 
 Link: https://dzone.com/articles/kubernetes-advantages-and-disadvantages
 
 ## KServe: Model Inference Platform on Kubernetes
 
-* highly scalable
-* autoscaling
-* performant
-* **standardized inference protocol across ML frameworks**
-* advanced deployment features
+KServe
+* offers (auto)scaling, e.g. 
+    * if number of requests increaes or 
+    * if there is no load at all (Scale to zero)
+* standardized inference protocol across ML frameworks
+* simplifies model deployment
 
 Link: https://kserve.github.io/website/0.11/
 
 ## InferenceService
 
 InferenceServices
-* provide Inference API ootb
-* support multiple ML frameworks/Model Serving Runtimes
+* provide Inference API 
+* support multiple ML frameworks/Model Serving Runtimes 
 * support for obtaining models from different storage locations
 * Autoscaling, incl. Scale-To-Zero
 
 "Since your model is being deployed as an InferenceService, not a raw Kubernetes Service, you just need to provide the storage location of the model and it gets some super powers out of the box 🚀."
+
+## Hands-On
+
+* k8s cluster by minikube
+* KServe is already installed
+* model classifies species of iris (see: https://en.wikipedia.org/wiki/Iris_flower_data_set)
+* the model was already uploaded to MinIO
+
+Image: https://en.wikipedia.org/wiki/Iris_flower_data_set#/media/File:Iris_dataset_scatterplot.svg
 
 ## Inference API (data plane protocol)
 
@@ -94,31 +108,27 @@ KServe supports
 
 ## Model Storage
 
-You can provide models on
+Models can be provided by
 * S3
 * Azure Blob Storage
 * URL
 * PVC
 
-## Hands-On
-
-* k8s cluster by minikube
-* KServe is already installed
-* model classifies species of iris (see: https://en.wikipedia.org/wiki/Iris_flower_data_set)
-* 
-
 ## Summary
 
-* Kubernetes + KServe provides High Availability
-* Kubernetes + KServe helps to utilize resources efficiently
-* KServe makes Serving Models very easy (usability)
-* KServe has features that improve reliability - but still work to be done
+* Kubernetes + KServe support High Availability (multiple nodes, replication, self-healing)
+* Kubernetes + KServe help to utilize resources efficiently (scheduling, autoscaling)
+* KServe makes Serving Models very easy --> Usability
+* KServe has features that improve reliability (versionining, monitoring etc.)
 
 ## Outlook
 
 * Increase reliability by making use of GitOps
-* Integration of FHIR resources in the Kubernetes-API 
+* Integration of FHIR resources in the Kubernetes-API
+* ...
 
 # Final Slide
 
 Thank you for your attention
+
+Contact: malte.groth@deepshore.de
