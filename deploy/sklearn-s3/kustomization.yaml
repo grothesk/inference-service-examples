@@ -1,0 +1,7 @@
+namespace: kserve-test
+
+resources:
+ - namespace.yaml
+ - secret.yaml
+ - service-account.yaml
+ - inference-service.yaml

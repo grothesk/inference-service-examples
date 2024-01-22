@@ -123,6 +123,7 @@ Models can be provided by
 
 ## Outlook
 
+* Perform Autosaling on GPUs
 * Increase reliability by making use of GitOps
 * Integration of FHIR resources in the Kubernetes-API
 * ...

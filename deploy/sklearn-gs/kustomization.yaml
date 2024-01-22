@@ -1,0 +1,5 @@
+namespace: kserve-test
+
+resources:
+ - namespace.yaml
+ - inference-service.yaml
